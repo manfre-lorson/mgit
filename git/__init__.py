@@ -31,7 +31,7 @@ class git():
         custom allows you to pass a custom git command"""
 
     def __init__(self, repo_name, verbose=False):
-        '''get location of site-packages'''
+        '''get location of site-packages and init the class'''
         path = []
         sitepackages = site.getsitepackages()
         self.verbose = verbose
@@ -64,7 +64,7 @@ class git():
                         print "other existing branches are:\n{0}".format(('').join(['--> {0}\n'.format(x) for x in branchlist])) 
             
             else:
-                print "ERROR: in reading braches"
+                print "ERROR: in reading branches"
                 print error.decode()
         elif len(path) < 1:
             print 'no package found with name {0} (in {1})'.format(repo_name, sitepackages)
