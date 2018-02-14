@@ -96,6 +96,7 @@ class git():
         if branch_name in self.branches:
             cmd = subprocess.Popen('git checkout {0}'.format(branch_name), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             (output, error) = cmd.communicate()
+            self.get_active()
             if verbose and output:
                 print output.decode()
             if verbose and error:
