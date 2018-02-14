@@ -130,7 +130,7 @@ class git():
             print error
             
     def ckpath(self):
-      '''checking if cwd is in the repo, if not it will change it'''
+        '''checking if cwd is in the repo, if not it will change it'''
         if os.getcwd() != self.repo:
             os.chdir(self.repo)
             if self.verbose:
